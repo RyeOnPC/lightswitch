@@ -1,0 +1,302 @@
+body {
+    background-color: #333;
+    background-image: linear-gradient(to top, #000 0%, #222 100%);
+    background-attachment:fixed;
+    height: 100vh;
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+    color: #fff;
+    padding: .5in 0;
+}
+#overlay {
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 9;
+    /* display: none; */
+}
+#setPlayers {
+    position:fixed;
+    background-color: #fff;
+    color: #696969;
+    border-radius: 5px;
+    box-shadow: 0 .3rem .75rem rgba(0,0,1, 0.6);
+    font-size: 100%;
+    display: inline-block;
+    /* display: none; */
+    z-index: 10;
+    top: 40%;
+    bottom: 40%;
+    left:33%;
+    right: 33%;
+    width:auto;
+    height:auto;
+    min-width: 200px;
+    min-height: 100px;
+    padding: .25in;
+}
+#player-quantity {
+    width: 40px;
+    height: 30px;
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+    font-size: 16pt;
+    color: #696969;
+    border-radius: 2px;
+    border: none;
+    border-bottom: #ccc 2px solid;
+    background-color: #fff;
+    margin: 15px 0;
+}
+#begin {
+    background-color: #ccc;
+    color: #696969;
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+    font-size: 16pt;
+    border: 2px solid #696969;
+    border-radius: 4px;
+}
+#begin:hover {
+    background-color:#ccc;
+    background-image: linear-gradient(to top, rgb(219, 219, 219) 0%, rgb(255, 255, 255) 100%);
+}
+#begin:active {
+    background-color:rgb(59, 59, 59);
+    background-image: linear-gradient(to top, rgb(112, 112, 112) 0%, rgb(77, 77, 77) 100%);
+    color: #000;
+    border-color: #000;
+}
+#intro {
+    background-color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    color: #000;
+    padding-top: .5in;
+    padding-bottom: .5in;
+    margin-bottom: .5in;
+    min-width: 550px;
+    width: 62%;
+}
+#intro>h3, #preview>h3 {
+    font-size: 48pt;
+    font-weight: 700;
+    padding: 0 0 .25in 0;
+    color: rgba(0, 0, 0, 0.8); 
+}
+#intro>h4, #preview>h4 {
+    font-size: 24pt;
+    font-weight: 500;
+    padding: 0;
+    margin: .5in 0;
+    line-height: 20pt;
+    color: rgba(0, 0, 0, 0.8); 
+}
+#intro>p, #preview>p {
+    color: rgba(0, 0, 0, 0.6); 
+    width: auto;
+    padding: 0 .5in;
+}
+.welcome {
+    color: #000; 
+}
+#preview {
+    background-color: #777;
+    border-radius: 4px;
+    display: inline-block;
+    width: 62%;
+    color: #000;
+    min-width: 550px;
+    padding-bottom: .5in;
+}
+
+.horizontal {
+    height: 3px;
+    margin: 0.5in 10%;
+    width: auto;
+    background: url('images/dotted.png') repeat-x;
+}
+#game {
+    width: 80%;
+    margin: 0 10%;
+    background-color: #32323266;
+    height: auto;
+    padding-bottom: 80px;
+    border-radius: 10px;
+    min-width: 550px;
+}
+.totalPlayers {
+    color: #00aa00;
+    font-weight: 700;
+}
+.totalSwitches {
+    color: #aa0000;
+    font-weight: 700;
+}
+.totalRooms {
+    color: #0000aa;
+    font-weight: 700;
+}
+#switchPanel {
+    background-image: url('images/switchpanel.png');
+    width: 100%;
+    height:20%;
+    min-height: 180px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: .5in;
+    overflow:hidden;
+}
+#lightOn, #lightOff {
+    height: 35%;
+    width: 35%;
+    min-height: 256px;
+    min-width: 256px;
+    background-position:center;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-bottom: -40px;
+    margin-top: 80px;
+}
+#lightOn {
+    background-image: url('images/bulb_on.png');
+}
+#lightOff {
+    background-image: url('images/bulb_off.png');
+}
+#switch0, #switch1, #switch2, #switch3, #switch4, #switch5 {
+    width: 80px;
+    height: 80px;
+    background-position-x: 0;
+    background-size: 240px 80px;
+    display: inline-block;
+    margin-top: 85px;
+    cursor:pointer;
+}
+#switchPanel>div:hover {
+    background-position-x: 160px;
+}
+#switchPanel>div:active {
+    background-position-x: 80px;
+}
+#switch0 {
+    background-image: url('images/lightswitch_red.png');
+}
+#switch1 {
+    background-image: url('images/lightswitch_blue.png');
+}
+#switch2 {
+    background-image: url('images/lightswitch_green.png');
+}
+#switch3 {
+    background-image: url('images/lightswitch_yellow.png');
+}
+#switch4 {
+    background-image: url('images/lightswitch_purple.png');
+}
+#switch5 {
+    background-image: url('images/lightswitch_white.png');
+}
+.badSwitch {
+    display: none !important;
+}
+.switchOff {
+    background-position-x: 80px !important;
+    cursor: default !important;
+}
+.hidden {
+    display: none !important;
+}
+.players {
+    display: inline-block;
+    padding: .5in;
+    background-image: linear-gradient(to top, rgb(30, 53, 117) 0%, rgb(87, 105, 187) 100%);
+    border: 2px solid rgb(123, 152, 240);
+    border-radius: 7px;
+    text-transform: lowercase;
+    margin: 20px 10px;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0, 0.6);
+}
+.activePlayer {
+    background-image: linear-gradient(to top, rgb(56, 111, 182) 0%,rgb(134, 179, 236) 100%) !important;
+    border: 2px solid rgb(159, 192, 253);
+    font-weight: 700;
+}
+.outPlayer {
+    background-image: linear-gradient(to top, rgb(117, 30, 30) 0%, rgb(187, 87, 87) 100%);
+    border: 2px solid rgb(100, 7, 7);
+}
+#playersContainer {
+    width:100%;
+    min-width: 620px;
+    display:inline-flexbox;
+}
+#runningScores {
+    position:relative;
+    text-align: left;
+    margin-left: .25in;
+    padding: .25in;
+    background-color:rgb(66, 126, 66);
+    box-shadow: 0 .2rem .5rem rgba(0,0,0, 0.6);
+    width: 200px;
+    border-radius: 4px;
+    color: rgba(255,255,255, 0.6);
+    margin-bottom: -10%;
+    top: 20px;
+}
+.hiScoreLeader {
+    font-weight: 700;
+    color: #fff;
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    color:rgba(255, 255, 255, 0.2);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2px 0;
+}
+.hideBody {
+    overflow: hidden !important;
+}
+.showBody {
+    overflow: visible !important;
+}
+#clearScores {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#clearScores:hover {
+    color: #fff;
+}
+#clearScores:active {
+    color: rgba(0,0,0, 0.6);
+}
+#roomSign {
+    background-image: url('images/room_sign.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position:absolute;
+    right: 0;
+    margin-right: 10%;
+    margin-top: 15px;
+    width: 15%;
+    height: 25%;
+    min-height: 200px;
+    font-size: 3.5vw;
+}
+.round {
+    display:block;
+    position:relative;
+    bottom:-55%;
+    width:100%;
+    vertical-align: text-bottom;
+}
