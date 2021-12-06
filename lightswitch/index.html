@@ -9,18 +9,20 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
-    <body class="hideBody">
+    <body>
         
         <div id="overlay">
         </div>
 
         <div id="players">
-            <div id="setPlayers">
-                <span>how many players will there be?</span><br>
-                <input type="number" id="player-quantity" name="players" min="2" max="5" value="2">
-                <label for="player-quantity">players</label><br>
-                <input type="submit" id="begin" style="cursor:pointer;">
-              </div>
+            <div id="gameSetup">
+                <div id="setPlayers">
+                    <span>how many players will there be?<br>pick between 2 and 5.</span><br>
+                    <input type="number" id="player-quantity" name="players" min="2" max="5" value="2">
+                    <label for="player-quantity">players</label><br>
+                    <input type="submit" id="begin" style="cursor:pointer;" value="begin">
+                </div>
+            </div>
         </div>
 
         <div id="intro">
@@ -38,30 +40,33 @@
         <div id="game">
             <div id="runningScores">
                 <u>hi-scores</u> <br>
-                <span id="p1score">player 1: <span id="p1hiscore">0</span></span> <br>
-                <span id="p2score">player 2: <span id="p2hiscore">0</span></span> <br>
-                <span id="p3score">player 3: <span id="p3hiscore">0</span></span> <br>
+                <span id="p0score">player 0: <span id="p0hiscore">5</span></span> <br>
+                <span id="p1score">player 1: <span id="p1hiscore">7</span></span> <br>
+                <span id="p2score">player 2: <span id="p2hiscore">5</span></span> <br>
+                <span id="p3score">player 3: <span id="p3hiscore">3</span></span> <br>
                 <span id="p4score">player 4: <span id="p4hiscore">0</span></span> <br>
-                <span id="p5score">player 5: <span id="p5hiscore">0</span></span> <br> <br>
-                <span id="clearScores">clear scores</span>
+                <!-- <span id="p5score">player 5: <span id="p5hiscore">0</span></span> <br> <br> -->
+                <span id="clearScores" onclick="clearScores()">clear scores</span>
+                <div id="newGameBtn">new game</div>
             </div>
             <div id="roomSign"><span class="round">1</span></div>
-            <div id="lightOn"></div>
-            <div id="lightOff" class="hidden"></div>
-            <div id="switchPanel">
-                <div id="switch0" class="switches"></div>
-                <div id="switch1" class="switches"></div>
-                <div id="switch2" class="switches"></div>
-                <div id="switch3" class="switches"></div>
-                <div id="switch4" class="switches"></div>
-                <div id="switch5" class="switches"></div>
+            <div id="switchandbulbcontainer">
+                <div id="lightBulb"></div>
+                <div id="switchPanel">
+                    <div id="switch0" class="switches offSwitch"></div>
+                    <div id="switch1" class="switches offSwitch"></div>
+                    <div id="switch2" class="switches offSwitch"></div>
+                    <div id="switch3" class="switches offSwitch"></div>
+                    <div id="switch4" class="switches offSwitch"></div>
+                    <div id="switch5" class="switches offSwitch"></div>
+                </div>
             </div>
             <div id="playersContainer">
-                <div id="player0" class="players activePlayer">Player 1</div>
-                <div id="player1" class="players">Player 2</div>
-                <div id="player2" class="players">Player 3</div>
-                <div id="player3" class="players">Player 4</div>
-                <div id="player4" class="players hidden">Player 5</div>
+                <div id="player0" class="players offPlayer">Player 1</div>
+                <div id="player1" class="players offPlayer">Player 2</div>
+                <div id="player2" class="players offPlayer">Player 3</div>
+                <div id="player3" class="players offPlayer">Player 4</div>
+                <div id="player4" class="players offPlayer">Player 5</div>
             </div>
             <footer>a javascript game written by ryan geist</footer>
         </div>
