@@ -32,15 +32,13 @@ body {
     display: inline-block;
     /* display: none; */
     z-index: 10;
-    top: 35%;
-    bottom: 35%;
-    left:33%;
-    right: 33%;
-    width:auto;
-    height:auto;
-    min-width: 320px;
-    min-height: 130px;
-    padding: .25in;
+    width: 320px;
+    height: 170px;
+    padding: 24px;
+    left: 50%;
+    top: 50%;
+    margin-left: -185px;
+    margin-top: -120px;
 }
 #setPlayers {
     position: relative;
@@ -174,17 +172,43 @@ body {
     min-height: 256px;
     max-height: 360px;
     min-width: 550px;
+    margin-top: 200px;
     background-position:center bottom;
     background-size: contain;
     display: inline-flex;
     clear:both;
     margin-bottom: -10px;
-    z-index: 1;
+    transition: 1 s;
+    z-index: 2;
     background-repeat: no-repeat;
     background-image: url('images/bulb_off.png');
 }
 .lightOn {
     background-image: url('images/bulb_on.png') !important;
+}
+#light {
+    display:inline-block;
+    position: relative;
+    margin: auto auto -380px auto;
+    width: 118px;
+    height: 118px;
+    border-radius: 59px;
+    clear:both;
+    z-index: 1;
+    background-color: #f0de3d;
+    -webkit-animation: glow2 1500ms ease-in-out infinite alternate;
+    -moz-animation: glow2 1500ms ease-in-out infinite alternate;
+    animation: glow2 1500ms ease-in-out infinite alternate;
+    z-index: 1;
+    transition: 1.5s;
+}
+@-webkit-keyframes glow2 {
+  from {
+    box-shadow: 0 0 12px #fff, 0 0 24px #fff, 0 0 36px #f0de3d, 0 0 48px #f0de3d, 0 0 60px #f0de3d, 0 0 72px #f0de3d, 0 0 84px #f0de3d;
+  }
+  to {
+    box-shadow: 0 0 12px #fff, 0 0 24px #fffeae, 0 0 36px #fffeae, 0 0 48px #fffeae, 0 0 60px #fffeae, 0 0 72px #fffeae, 0 0 84px #fffeae;
+  }
 }
 .switches {
     width: 80px;
@@ -230,11 +254,17 @@ body {
 .hidden {
     display: none !important;
 }
+.invisible {
+    opacity: 0;
+}
 .players {
     display: inline-block;
     padding: .5in;
-    background-image: linear-gradient(to top, rgb(14, 37, 100) 0%,rgb(31, 57, 177) 100%);
-    border: 2px solid rgb(74, 112, 226);
+    /* background-image: linear-gradient(to top, rgb(15, 48, 138) 0%,rgb(31, 57, 177) 100%);
+    background-color: rgb(15, 48, 138);
+    border: 2px solid rgb(74, 112, 226); */
+    background-color: #4653a4;
+    border: 2px solid #6775B8;
     color: rgba(255,255,255,.6);
     border-radius: 7px;
     text-transform: lowercase;
@@ -244,19 +274,42 @@ body {
     transition: 600ms;
 }
 .activePlayer {
-    background-image: linear-gradient(to top, rgb(56, 111, 182) 0%,rgb(134, 179, 236) 100%) !important;
-    border: 2px solid rgb(159, 192, 253);
+    /* background-image: linear-gradient(to top, rgb(68, 129, 209) 0%,rgb(134, 179, 236) 100%) !important;
+    background-color: rgb(56, 111, 182);
+    border: 2px solid rgb(159, 192, 253); */
+    background-color: #5E9EEA;
+    border: 2px solid #fff;
     font-weight: 700;
     color: rgba(255,255,255,1);
     transition: 600ms;
 }
 .offPlayer {
-    background-image: linear-gradient(to top, rgb(117, 30, 30) 0%, rgb(187, 87, 87) 100%) !important;
+    background-image: linear-gradient(to top, rgb(117, 30, 30) 0%, rgb(204, 54, 54) 100%) !important;
     border: 2px solid rgb(100, 7, 7);
     color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
     filter: grayscale(100%) brightness(.33);
     transition: 600ms;
+}
+.winnerPlayer {
+    background-image: linear-gradient(to top, rgb(209, 160, 68) 0%,rgb(230, 219, 120) 100%) !important;
+    background-color: rgb(209, 160, 68);
+    border: 2px solid rgb(209, 173, 14);
+    color: #fff;
+    -webkit-animation: glow 1500ms ease-in-out infinite alternate;
+    -moz-animation: glow 1500ms ease-in-out infinite alternate;
+    animation: glow 1500ms ease-in-out infinite alternate;
+    text-shadow: 0 0 8px #ffffff;
+    font-weight: 700;
+    transition: 1.5s;
+}
+@-webkit-keyframes glow {
+  from {
+    box-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #f0de3d, 0 0 16px #f0de3d, 0 0 20px #f0de3d, 0 0 24px #f0de3d, 0 0 28px #f0de3d;
+  }
+  to {
+    box-shadow: 0 0 4px #fff, 0 0 8px #fffeae, 0 0 12px #fffeae, 0 0 16px #fffeae, 0 0 20px #fffeae, 0 0 24px #fffeae, 0 0 28px #fffeae;
+  }
 }
 #playersContainer {
     width:100%;
@@ -274,7 +327,7 @@ body {
     border-radius: 4px;
     color: rgba(255,255,255, 0.6);
     margin-bottom: -10%;
-    top: 20px;
+    top: -115px;
     z-index: 4;
 }
 .hiScoreLeader {
@@ -335,27 +388,44 @@ footer {
     position:relative;
     display:inline-block;
     background-image: url('images/room_sign.png');
-    background-size: contain;
+    background-size:80%;
     background-repeat: no-repeat;
-    background-position-y: top;
     background-position-x: center;
+    background-position-y: center;
     z-index: 4;
-    margin-right: .25in;
-    padding: .25in;
-    width: 200px;
-    height: auto;
-    font-size: 3.5vw;
-    bottom: 0%;
-    top: 0%;
-    float: right;
+    padding: .5in;
+    font-size: 24pt;
 }
 .round {
-    font-size: 48pt;
-    display:block;
-    position:relative;
-    height: 45%;
-    margin-top: 70%;
-    width:100%;
-    vertical-align: baseline;
-    lineheight: 100%;
+}
+
+#message {
+    display: block;
+    background-color: rgba(255,255,255, 0.6);
+    box-shadow: 0 .3rem .75rem rgba(0,0,1, 0.6);
+    padding:.25in;
+    border-radius: 4px;
+    width: 200px;
+    margin-left: .25in;
+    margin-top: 135px;
+    height: 80px;
+    margin-bottom: -260px;
+    position: relative;
+    color: #000;
+    z-index: 4;
+    text-align: left;
+    transition: 300ms;
+    line-height: 16pt;
+}
+.msg-red {
+    background-color: rgba(255, 0, 0, 0.6) !important;
+    transition: 0s !important;
+}
+.msg-grn {
+    background-color: rgba(0, 255, 0, 0.6) !important;
+    transition: 0s !important;
+}
+.msg-gld {
+    background-color: rgba(255, 238, 0, 0.6) !important;
+    transition: 0s !important;
 }

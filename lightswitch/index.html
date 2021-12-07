@@ -27,7 +27,7 @@
 
         <div id="intro">
             <h3>/lightswitch</h3>
-            <p><span class="welcome">welcome to <u>lightswitch</u>.</span> i've brought you <span  class="totalPlayers">four</span> people here to help me locatethe lightswitches that control the lights  in <span class="totalRooms">three</span> rooms. let's get started...<br><br>i'll put you four in the first room. in this room, there are <span class="totalSwitches">five</span> lightswitches. one of these switches will turn off the light. <b>(hint: it's randomized!)</b> whoever finds that lightswitch will lose. <i>however...</i> nobody will press two switches in the same round. if all <span class="totalPlayers" id="tP2">four</span> of you flip a switch that does not turn off the light, then i will shuffle the switches, and restart the round. you do not advance to the next room until one of you locates the switch.<br><br>if you find the switch, you're eliminated. the remaining players will enter the next room, where there will be one less lightswitch. you'll repeat this process until two of you enter the last room with three switches.<br><br>one lightswitch in each room will shut the light off. if you shut the light off, you're eliminated. the one who does not shut off any light wins.
+            <p><span class="welcome">welcome to <u>lightswitch</u>.</span> i've brought you <span  class="totalPlayers">four</span> people here to help me locate the lightswitches that control the lights in <span class="totalRooms">three</span> rooms. let's get started...<br><br>i'll put you <span class="totalPlayers" id="tP2">four</span> in the first room. in this room, there are <span class="totalSwitches">five</span> lightswitches. one of these switches will turn off the light. <b>(hint: it's randomized!)</b> whoever finds that lightswitch will lose. <i>however...</i> nobody will press two switches in the same round. if all <span class="totalPlayers" id="tP3">four</span> of you flip a switch that does not turn off the light, then i will shuffle the switches, and restart the round. you do not advance to the next room until one of you locates the switch.<br><br>if you find the switch, you're eliminated. the remaining players will enter the next room, where there will be one less lightswitch. you'll repeat this process until two of you enter the last room with three switches.<br><br>one lightswitch in each room will shut the light off. if you shut the light off, you're eliminated. the one who does not shut off any light wins.
             </p>
         </div>
         <div id="preview">
@@ -38,19 +38,23 @@
         </div>
         <div class="horizontal"></div>
         <div id="game">
+            <div id="roomSign">room <span class="round">1</span></div>
             <div id="runningScores">
                 <u>hi-scores</u> <br>
-                <span id="p0score">player 0: <span id="p0hiscore">5</span></span> <br>
-                <span id="p1score">player 1: <span id="p1hiscore">7</span></span> <br>
-                <span id="p2score">player 2: <span id="p2hiscore">5</span></span> <br>
-                <span id="p3score">player 3: <span id="p3hiscore">3</span></span> <br>
-                <span id="p4score">player 4: <span id="p4hiscore">0</span></span> <br>
-                <!-- <span id="p5score">player 5: <span id="p5hiscore">0</span></span> <br> <br> -->
+                <span id="p0score">player 1: <span id="p0hiscore">5</span></span> <br>
+                <span id="p1score">player 2: <span id="p1hiscore">7</span></span> <br>
+                <span id="p2score">player 3: <span id="p2hiscore">5</span></span> <br>
+                <span id="p3score">player 4: <span id="p3hiscore">3</span></span> <br>
+                <span id="p4score">player 5: <span id="p4hiscore">0</span></span> <br>
                 <span id="clearScores" onclick="clearScores()">clear scores</span>
                 <div id="newGameBtn">new game</div>
             </div>
-            <div id="roomSign"><span class="round">1</span></div>
+            <div id="message">
+                <span id="msgLine1"></span> <br><br>
+                <span id="msgLine2"></span>
+            </div>
             <div id="switchandbulbcontainer">
+                <div id="light" class="invisible"></div>
                 <div id="lightBulb"></div>
                 <div id="switchPanel">
                     <div id="switch0" class="switches offSwitch"></div>
