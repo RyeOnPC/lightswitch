@@ -293,7 +293,7 @@ body {
 }
 .winnerPlayer {
     background-image: linear-gradient(to top, rgb(209, 160, 68) 0%,rgb(230, 219, 120) 100%) !important;
-    background-color: rgb(209, 160, 68);
+    background-color: rgb(230, 219, 120);
     border: 2px solid rgb(209, 173, 14);
     color: #fff;
     -webkit-animation: glow 1500ms ease-in-out infinite alternate;
@@ -419,13 +419,13 @@ footer {
 }
 .msg-red {
     background-color: rgba(255, 0, 0, 0.6) !important;
-    transition: 0s !important;
+    transition: 0ms !important;
 }
 .msg-grn {
     background-color: rgba(0, 255, 0, 0.6) !important;
-    transition: 0s !important;
+    transition: 0ms !important;
 }
 .msg-gld {
-    background-color: rgba(255, 238, 0, 0.6) !important;
-    transition: 0s !important;
+    background-color: rgba(230, 219, 120, 1) !important;
+    transition: 0ms !important;
 }

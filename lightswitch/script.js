@@ -229,13 +229,13 @@ const clearScores = function() {
 const eliminatePlayerMsg = function () {
     messageTxt1.textContent = `${playersIn[activePlayer].textContent} has been eliminated!`;
     messageColor.classList.add('msg-red');
-    setTimeout(function () {messageColor.classList.remove('msg-red');}, 100);
+    setTimeout(function () {messageColor.classList.remove('msg-red');}, 50);
 }
 
 const successPlayerMsg = function () {
     messageTxt1.textContent = `well done, ${playersIn[activePlayer].textContent}!`;
     messageColor.classList.add('msg-grn');
-    setTimeout(function () {messageColor.classList.remove('msg-grn');}, 100);
+    setTimeout(function () {messageColor.classList.remove('msg-grn');}, 50);
 }
 
 const nextPlayerMsg = function () {
@@ -248,8 +248,8 @@ const shuffleMsg = function () {
 }
 
 const winMsg = function () {
-    messageTxt1.textContent = `${playersIn[activePlayer].textContent} wins!`;
-    messageTxt2.textContent = `tally a win for ${playersIn[activePlayer].textContent}!`;
+    messageTxt1.textContent = `${playersIn[0].textContent} wins!`;
+    messageTxt2.textContent = `tally a win for ${playersIn[0].textContent}!`;
     messageColor.classList.add('msg-gld');
 }
 
